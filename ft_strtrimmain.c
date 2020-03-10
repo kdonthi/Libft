@@ -1,32 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstdel.c                                        :+:      :+:    :+:   */
+/*   ft_strtrimmain.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kdonthi <kdonthi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/03/06 16:20:57 by kdonthi           #+#    #+#             */
-/*   Updated: 2020/03/09 17:36:27 by kdonthi          ###   ########.fr       */
+/*   Created: 2020/03/02 17:52:53 by kdonthi           #+#    #+#             */
+/*   Updated: 2020/03/05 15:13:21 by kdonthi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-#include "libft.h"
+#include "../libft.h"
+#include <stdio.h>
 
-void	ft_lstdel(t_list **alst, void (*del)(void *, size_t))
+int main ()
 {
-	t_list	*temp;
-
-	while (*alst != NULL)
-	{
-		temp = *alst;
-		if (temp->next)
-		{
-			while ((temp->next)->next != NULL)
-				temp = temp->next;
-			ft_lstdelone(&(temp->next), del);
-		}
-		else
-			ft_lstdelone(alst, del);
-	}
+	//should be hello
+	printf("Output 1: %s\n", ft_strtrim("   hello   "));
+	//should also be hello
+	printf("Output 2: %s\n", ft_strtrim("hello"));
+	//should be hello world
+	printf("Output 3: %s\n", ft_strtrim(" Hello World! "));
+	//should be a s d f
+	printf("Output 4: %s\n", ft_strtrim(" a s d f "));
 }

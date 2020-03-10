@@ -1,32 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstdel.c                                        :+:      :+:    :+:   */
+/*   ft_putnbrmain.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kdonthi <kdonthi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/03/06 16:20:57 by kdonthi           #+#    #+#             */
-/*   Updated: 2020/03/09 17:36:27 by kdonthi          ###   ########.fr       */
+/*   Created: 2020/03/05 13:43:39 by kdonthi           #+#    #+#             */
+/*   Updated: 2020/03/05 13:55:32 by kdonthi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
 #include "libft.h"
+#include <limits.h>
 
-void	ft_lstdel(t_list **alst, void (*del)(void *, size_t))
+int main()
 {
-	t_list	*temp;
-
-	while (*alst != NULL)
-	{
-		temp = *alst;
-		if (temp->next)
-		{
-			while ((temp->next)->next != NULL)
-				temp = temp->next;
-			ft_lstdelone(&(temp->next), del);
-		}
-		else
-			ft_lstdelone(alst, del);
-	}
+	ft_putnbr(INT_MAX);
+	ft_putchar('\n');
+	ft_putnbr(INT_MIN);
+	ft_putchar('\n');
+	ft_putnbr(0);
+	ft_putchar('\n');
+	ft_putnbr(-342);
+	ft_putchar('\n');
+	ft_putnbr(42);
+	ft_putchar('\n');
 }

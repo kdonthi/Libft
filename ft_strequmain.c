@@ -1,32 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstdel.c                                        :+:      :+:    :+:   */
+/*   ft_strequmain.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kdonthi <kdonthi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/03/06 16:20:57 by kdonthi           #+#    #+#             */
-/*   Updated: 2020/03/09 17:36:27 by kdonthi          ###   ########.fr       */
+/*   Created: 2020/03/02 16:03:12 by kdonthi           #+#    #+#             */
+/*   Updated: 2020/03/02 16:13:03 by kdonthi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include <string.h>
 #include "libft.h"
+#include <stdio.h>
 
-void	ft_lstdel(t_list **alst, void (*del)(void *, size_t))
+int main()
 {
-	t_list	*temp;
-
-	while (*alst != NULL)
-	{
-		temp = *alst;
-		if (temp->next)
-		{
-			while ((temp->next)->next != NULL)
-				temp = temp->next;
-			ft_lstdelone(&(temp->next), del);
-		}
-		else
-			ft_lstdelone(alst, del);
-	}
+	//should be 0
+	printf("Output 1: %i\n", ft_strequ("hello", "bye"));
+	//should be 1
+	printf("Output 2: %i\n", ft_strequ("bye", "bye"));
+	//should be 1
+	printf("Output 3: %i\n", ft_strequ(NULL, NULL));
+	//both should be 0
+	printf("Output 4/5: %i, %i", ft_strequ(NULL, "bye"), ft_strequ("bye", NULL));
 }

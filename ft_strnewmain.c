@@ -1,32 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstdel.c                                        :+:      :+:    :+:   */
+/*   main3.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kdonthi <kdonthi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/03/06 16:20:57 by kdonthi           #+#    #+#             */
-/*   Updated: 2020/03/09 17:36:27 by kdonthi          ###   ########.fr       */
+/*   Created: 2020/02/29 16:43:33 by kdonthi           #+#    #+#             */
+/*   Updated: 2020/02/29 17:35:45 by kdonthi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
 #include "libft.h"
-
-void	ft_lstdel(t_list **alst, void (*del)(void *, size_t))
+#include <stdio.h>
+int main()
 {
-	t_list	*temp;
+	int x = -3;
+	int i = 0;
 
-	while (*alst != NULL)
+	char *string = ft_strnew(x);
+	if (!string)
 	{
-		temp = *alst;
-		if (temp->next)
-		{
-			while ((temp->next)->next != NULL)
-				temp = temp->next;
-			ft_lstdelone(&(temp->next), del);
-		}
-		else
-			ft_lstdelone(alst, del);
+		printf("ERROR");
+		return(1);
+	}
+	while (i < x)
+	{
+		printf("%i: %c\n", i, string[i]);
+		i++;
 	}
 }
