@@ -1,26 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*   main4.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kdonthi <kdonthi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/28 14:57:51 by kdonthi           #+#    #+#             */
-/*   Updated: 2020/02/28 18:36:57 by kdonthi          ###   ########.fr       */
+/*   Created: 2020/02/29 17:38:20 by kdonthi           #+#    #+#             */
+/*   Updated: 2020/03/01 17:32:29 by kdonthi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdio.h>
 #include "libft.h"
-
-int	ft_isalpha(int c)
+#include <stdlib.h>
+int main()
 {
-	unsigned char x;
-	
-	if (c >= 256 || c < 0)
-		return (0);
-	x = (unsigned char)c;
-	if ((x >= 'A' && x <= 'Z') || (x >= 'a' && x <= 'z'))
-		return (1);
-	else
-		return (0);
+	char a = 'a';
+	char* b = malloc(sizeof(char) * 1);
+	*b = a;
+	char **c = malloc(sizeof(char*) * 1);
+	*c = b;
+	printf("a before: %c\n", **c);
+	ft_memdel((void**)c);
+	printf("a after: %c\n", **c);
+	return (0);
 }

@@ -1,26 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*   ft_strtrimmain.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kdonthi <kdonthi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/28 14:57:51 by kdonthi           #+#    #+#             */
-/*   Updated: 2020/02/28 18:36:57 by kdonthi          ###   ########.fr       */
+/*   Created: 2020/03/02 17:52:53 by kdonthi           #+#    #+#             */
+/*   Updated: 2020/03/05 15:13:21 by kdonthi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../libft.h"
+#include <stdio.h>
 
-int	ft_isalpha(int c)
+int main ()
 {
-	unsigned char x;
-	
-	if (c >= 256 || c < 0)
-		return (0);
-	x = (unsigned char)c;
-	if ((x >= 'A' && x <= 'Z') || (x >= 'a' && x <= 'z'))
-		return (1);
-	else
-		return (0);
+	//should be hello
+	printf("Output 1: %s\n", ft_strtrim("   hello   "));
+	//should also be hello
+	printf("Output 2: %s\n", ft_strtrim("hello"));
+	//should be hello world
+	printf("Output 3: %s\n", ft_strtrim(" Hello World! "));
+	//should be a s d f
+	printf("Output 4: %s\n", ft_strtrim(" a s d f "));
 }

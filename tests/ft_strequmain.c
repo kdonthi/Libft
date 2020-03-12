@@ -1,26 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*   ft_strequmain.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kdonthi <kdonthi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/28 14:57:51 by kdonthi           #+#    #+#             */
-/*   Updated: 2020/02/28 18:36:57 by kdonthi          ###   ########.fr       */
+/*   Created: 2020/03/02 16:03:12 by kdonthi           #+#    #+#             */
+/*   Updated: 2020/03/02 16:13:03 by kdonthi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <string.h>
 #include "libft.h"
+#include <stdio.h>
 
-int	ft_isalpha(int c)
+int main()
 {
-	unsigned char x;
-	
-	if (c >= 256 || c < 0)
-		return (0);
-	x = (unsigned char)c;
-	if ((x >= 'A' && x <= 'Z') || (x >= 'a' && x <= 'z'))
-		return (1);
-	else
-		return (0);
+	//should be 0
+	printf("Output 1: %i\n", ft_strequ("hello", "bye"));
+	//should be 1
+	printf("Output 2: %i\n", ft_strequ("bye", "bye"));
+	//should be 1
+	printf("Output 3: %i\n", ft_strequ(NULL, NULL));
+	//both should be 0
+	printf("Output 4/5: %i, %i", ft_strequ(NULL, "bye"), ft_strequ("bye", NULL));
 }

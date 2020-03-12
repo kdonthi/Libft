@@ -1,26 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*   ft_itoamain.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kdonthi <kdonthi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/28 14:57:51 by kdonthi           #+#    #+#             */
-/*   Updated: 2020/02/28 18:36:57 by kdonthi          ###   ########.fr       */
+/*   Created: 2020/03/04 16:59:24 by kdonthi           #+#    #+#             */
+/*   Updated: 2020/03/04 17:30:45 by kdonthi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-int	ft_isalpha(int c)
+#include <stdio.h>
+#include <limits.h>
+int main()
 {
-	unsigned char x;
-	
-	if (c >= 256 || c < 0)
-		return (0);
-	x = (unsigned char)c;
-	if ((x >= 'A' && x <= 'Z') || (x >= 'a' && x <= 'z'))
-		return (1);
-	else
-		return (0);
+    printf("Should be 345: %s\n", ft_itoa(345));
+    printf("Should be 12930981: %s\n", ft_itoa(12930981));
+    printf("Should be int min: %s\n", ft_itoa(INT_MIN));
+    printf("Should be int max: %s\n", ft_itoa(INT_MAX));
+    printf("Should be -3234: %s\n", ft_itoa(-3234));
 }

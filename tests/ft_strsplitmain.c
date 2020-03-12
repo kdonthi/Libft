@@ -1,26 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*   ft_strsplitmain.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kdonthi <kdonthi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/28 14:57:51 by kdonthi           #+#    #+#             */
-/*   Updated: 2020/02/28 18:36:57 by kdonthi          ###   ########.fr       */
+/*   Created: 2020/03/06 19:03:03 by kdonthi           #+#    #+#             */
+/*   Updated: 2020/03/06 19:30:19 by kdonthi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdio.h>
 
-int	ft_isalpha(int c)
+int main()
 {
-	unsigned char x;
-	
-	if (c >= 256 || c < 0)
-		return (0);
-	x = (unsigned char)c;
-	if ((x >= 'A' && x <= 'Z') || (x >= 'a' && x <= 'z'))
-		return (1);
-	else
-		return (0);
+	char** arrayofchars = ft_strsplit("Hello World!", ' ');
+	int i = 0;
+	int j;
+	while (arrayofchars[i] != '\0')
+	{
+		j = 0;
+		while (arrayofchars[i][j] != '\0')
+			printf("%c", arrayofchars[i][j++]);
+		printf("\n");
+		i++;
+	}
 }
